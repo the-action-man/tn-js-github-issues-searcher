@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Searcher</title>
+    <style>
+        .flash-container {
+            background-color: orangered;
+        }
+        table tr td {
+            border: 1px solid gray;
+        }
+        table tr td:nth-of-type(4) {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress" style="display:none">
+        Выполняется поиск:
+        <div style="width:400px;border:1px solid #000">
+            <div id="bar" style="background:#00f;height:10px;width:0px">
+            </div>
+        </div>
+    </div>
+    <div id="searcher">
+        <h3>Введите данные для поиска:</h3>
+        <div id='flash-container' class='flash-container'></div>
+        <p>https://github.com/repos/
+            <input id="owner" type="text" placeholder="enter owner">
+            /
+            <input id="repo" type="text" placeholder="enter repo">
+            /issues?assignee=
+            <input id="assignee" type="text" placeholder="enter name">
+            <button id="find">Find</button>
+        </p>
+    </div>
+    <div id="issues">
+        <h3>Результат поиска:</h3>
+        <div id="issues-container" ></div>
+    </div>
+
+    <script src="find.js"></script>
+    <script src="show.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
